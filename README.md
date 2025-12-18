@@ -3,7 +3,7 @@
 ClearKitchen AI is an ingredient-aware recipe generation tool designed to help users decide what to cook based on what they already have. Instead of browsing generic recipe databases, users can input available ingredients and receive a realistic recipe adapted to their constraints, such as dietary preferences or limited cooking time.
 The project is implemented as a lightweight web-based prototype, focusing on demonstrating how semantic retrieval and large language models can support everyday cooking decisions.
 
-![Main interface](interface1.png)
+![Main interface](Screenshots/interface1.png)
 
 ## Key Features
 ### Ingredient-Based Input
