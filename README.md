@@ -56,12 +56,4 @@ ClearKitchen AI is intended for:
 - users who prefer guidance instead of browsing long recipe lists
 
 ### Implementation Notes
-The application is implemented entirely in Python and exposed through a web interface built with Streamlit. It integrates image processing, embedding-based retrieval, and recipe generation into a single pipeline. 
-### Limitations 
-- Ingredient extraction from images depends on visibility and lighting conditions.
-- The recipe dataset is limited and may not cover all cuisines.
-### Future Improvements 
-Future work includes: 
-- expanding the recipe dataset
-- improving robustness of image-based ingredient detection
-- supporting richer personalization features
+The application is implemented entirely in Python and exposed through a web interface built with Streamlit. It integrates image processing, embedding-based retrieval, and recipe generation into a single pipeline.
