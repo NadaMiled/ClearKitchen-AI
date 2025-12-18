@@ -1,6 +1,6 @@
 ## Overview
 
-ClearKitchen AI is an ingredient-aware recipe generation tool designed to help users decide what to cook based on what they already have. Instead of browsing generic recipe databases, users can input available ingredients and receive a realistic recipe adapted to their constraints, such as dietary preferences or limited cooking time.
+ClearKitchen AI is an ingredient-aware recipe suggestion tool designed to help users decide what to cook based on what they already have. Instead of browsing generic recipe databases, users can input available ingredients and receive a realistic recipe adapted to their constraints, such as dietary preferences or limited cooking time.
 The project is implemented as a lightweight web-based prototype, focusing on demonstrating how semantic retrieval and large language models can support everyday cooking decisions.
 
 ![Main interface](Screenshots/interface1.png)
@@ -19,7 +19,7 @@ The system extracts visible ingredients from the image, which can then be review
 ![Main interface](Screenshots/detection.png)
 
 
-### Constraint-Aware Recipe Generation
+### Constraint-Aware Recipe suggestion
 
 Users may specify constraints such as:
 
@@ -29,7 +29,7 @@ Users may specify constraints such as:
 
 - ingredients to exclude
 
-These constraints are incorporated into the recipe generation process.
+These constraints are incorporated into the recipe suggestion process.
 
 ### Semantic Recipe Retrieval
 
@@ -61,4 +61,4 @@ ClearKitchen AI is intended for:
 - users who prefer guidance instead of browsing long recipe lists
 
 ### Implementation Notes
-The application is implemented entirely in Python and exposed through a web interface built with Streamlit. It integrates image processing, embedding-based retrieval, and recipe generation into a single pipeline.
+The application is implemented in Python and exposed through a web interface built with Streamlit. It integrates image processing, embedding-based retrieval, and recipe suggestion into a single pipeline.
