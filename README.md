@@ -15,6 +15,7 @@ The system is designed to work with partial or loosely defined inputs, reflectin
 
 Users can upload an image of their fridge or ingredients.
 The system extracts visible ingredients from the image, which can then be reviewed and adjusted manually before recipe generation.
+
 ![Main interface](Screenshots/detection.png)
 
 
