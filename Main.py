@@ -34,7 +34,7 @@ def retrieve_recipes(user_ingredients, recipes, k=5):
 
 
 
-client = OpenAI(api_key="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")
+
 
 # init state
 for k,v in dict(recipe=None, prompt="", ingredients="", diet="none", max_time=40).items():
