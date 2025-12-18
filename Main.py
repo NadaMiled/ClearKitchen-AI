@@ -179,13 +179,7 @@ def retrieve_recipes_embedding(user_ingredients, recipes, k=5, client=None):
         sim = cosine_sim(q_vec, r_vec)
         scored.append((sim, r))
 
-    # 3) Trier par similarité décroissante
-    scored.sort(reverse=True, key=lambda x: x[0])
-
-    # 4) Garder les k meilleurs, ignorer ceux très faibles (optionnel)
-    top = []
-    for sim, r in scored[:k]:
-        # si tu veux filtrer les matchs très nuls, tu peux mettre un seuil:
+    # 3) Trier par similarité décroissantegitettre un seuil:
         # if sim < 0.1: continue
         top.append(r)
 
