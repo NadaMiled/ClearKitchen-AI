@@ -84,9 +84,6 @@ div[data-testid="column"]:first-child {
 
 
 
-#with open("recipes_clean.json", "r", encoding="utf-8") as f:
-   # local_recipes = json.load(f)
-
 @st.cache_resource
 def load_recipes():
     with open("recipes_emb.json", "r", encoding="utf-8") as f:
@@ -126,29 +123,6 @@ def ingredient_to_emoji(name):
 
 
 
-#def retrieve_recipes(user_ingredients, recipes, k=5):
-    #"""Simple RAG retrieval: score recipes by ingredient substring overlap."""
-    # ingrédients saisis par l'utilisateur
-    #user_list = [i.strip().lower() for i in user_ingredients.split(",") if i.strip()]
-
-    #scored = []
-    #for r in recipes:
-    #    ing_texts = [ing.lower() for ing in r["ingredients"]]
-
-    #    score = 0
-    #    for u in user_list:
-    #        # si le texte de l'ingrédient apparaît dans au moins un ingrédient de la recette
-    #        if any(u in ing for ing in ing_texts):
-    #            score += 1
-
-    #    if score > 0:
-    #        scored.append((score, r))
-
-    #scored.sort(reverse=True, key=lambda x: x[0])
-    #return [r for score, r in scored[:k]]
-
-
-
 def retrieve_recipes_embedding(user_ingredients, recipes, k=5, client=None):
     """
     RAG via embeddings :
@@ -170,7 +144,7 @@ def retrieve_recipes_embedding(user_ingredients, recipes, k=5, client=None):
     )
     q_vec = q_resp.data[0].embedding
 
-    # 2) Similarité avec chaque recette
+    
     scored = []
     for r in recipes:
         r_vec = r.get("embedding", None)
@@ -179,14 +153,14 @@ def retrieve_recipes_embedding(user_ingredients, recipes, k=5, client=None):
         sim = cosine_sim(q_vec, r_vec)
         scored.append((sim, r))
 
-    # 3) Trier par similarité décroissantegitettre un seuil:
+    
         # if sim < 0.1: continue
         top.append(r)
 
     return top
 
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # init state
 for k,v in dict(recipe=None, prompt="", ingredients="", diet="none", max_time=40).items():
     st.session_state.setdefault(k, v)
@@ -369,13 +343,13 @@ with right:
             col = cols[idx % 4]
 
             with col:
-                # AFFICHER LE TAG COMME BOUTON (clique = remove)
+                
                 if st.button(ingr, key=f"tag_{idx}", help="Click to remove"):
                     ingredients_list.pop(idx)
                     st.session_state.fridge_selection = ", ".join(ingredients_list)
                     st.rerun()
 
-                # appliquer la classe CSS
+                
                 st.markdown(
                     f"""
                     <script>
@@ -491,9 +465,8 @@ with center:
         st.session_state.feedback_clicked = False  # reset flag on new recipe
 
 
-# =====================================================================
 # ALWAYS SHOW THE RECIPE IF IT EXISTS (EVEN AFTER LIKE/DISLIKE)
-# =====================================================================
+
 
 if st.session_state.recipe:
     centerA, mid, centerB = st.columns([1, 2, 1])
@@ -519,7 +492,7 @@ if st.session_state.recipe:
                     st.session_state.diet,
                     st.session_state.max_time
                 ])
-            st.session_state.last_feedback = label   # <--- confirmation visible
+            st.session_state.last_feedback = label  
 
 
         f1.button("👍 Like", on_click=log_feedback, args=("like",), key="like_btn_persist")
