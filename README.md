@@ -64,11 +64,11 @@ ClearKitchen AI is intended for:
 The application is implemented in Python and exposed through a web interface built with Streamlit. It integrates image processing, embedding-based retrieval, and recipe suggestion into a single pipeline.
 
 ## Installation
-1.Clone the repository
-2.(Optional) Create and activate a virtual environment:
-  python -m venv venv
-  source venv/bin/activate   # Windows: venv\Scripts\activate
-3.Install dependencies:
+1. Clone the repository
+2. (Optional) Create and activate a virtual environment:
+    python -m venv venv
+    source venv/bin/activate   # Windows: venv\Scripts\activate
+3. Install dependencies:
   pip install -r requirements.txt
 4.Set your OpenAI API key as an environment variable
   #### option1: Environment Variable
