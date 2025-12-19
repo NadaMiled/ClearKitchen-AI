@@ -90,4 +90,12 @@ The application is implemented in Python and exposed through a web interface bui
    
        streamlit run Main.py
 
+## Example Walkthrough
+
+1. Enter available ingredients manually and/or upload an image of your fridge.
+2. Review and select detected ingredients.
+3. Choose dietary preferences and a maximum cooking time.
+4. Click “Suggest Recipe” to receive a recipe recommendation.
+
+
 
