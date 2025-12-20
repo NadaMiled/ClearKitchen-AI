@@ -160,7 +160,7 @@ def retrieve_recipes_embedding(user_ingredients, recipes, k=5, client=None):
     return top
 
 
-#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # init state
 for k,v in dict(recipe=None, prompt="", ingredients="", diet="none", max_time=40).items():
     st.session_state.setdefault(k, v)
